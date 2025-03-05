@@ -44,3 +44,8 @@ h1, h2, h3, h4, h5, h6, [class*="css"] {
 [data-testid="stBaseButton-primary"]:active {
     transform: scale(0.9);
 }
+
+.st-key-Sentence p {    
+    font-size: 50px;
+    line-height: 1.2;
+}
