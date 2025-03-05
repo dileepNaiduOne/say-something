@@ -388,7 +388,11 @@ phrases = [
     # (140 more similar phrases)
 ]
 
-clicked = st.button("Say Something...", type="primary")
+if "button_clicked" not in st.session_state:
+    st.session_state["button_clicked"] = False
+
+clicked = st.button("Say Something...", type="primary", disabled=st.session_state["button_clicked"])
+st.session_state["button_clicked"] = True
 
 
 with st.container(key="Sentence"):
@@ -396,5 +400,5 @@ with st.container(key="Sentence"):
     if clicked:
         for i in range(20):
             line = random.choice(phrases)
-            sentence.write(line)
+            sentence.write(f":gray[Universe thinks,] {line}")
             time.sleep(0.15)
